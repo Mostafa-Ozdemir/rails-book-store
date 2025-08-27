@@ -1,0 +1,12 @@
+<div class="book-details-container" style="max-width: 500px; margin: 40px auto; background: #fff; border-radius: 12px; box-shadow: 0 4px 24px rgba(0,0,0,0.08); padding: 32px;">
+    <h1 style="font-size: 2.2rem; font-weight: 700; margin-bottom: 12px; color: #2d3748;"><%= @book.name %></h1>
+    <p style="font-size: 1.1rem; color: #718096; margin-bottom: 24px;">
+        <strong>ISBN:</strong> <%= @book.isbn %>
+    </p>
+
+    <div style="display: flex; gap: 12px;">
+        <%= link_to "Back", books_path, class: "btn btn-secondary", style: "padding: 8px 20px; border-radius: 6px; background: #edf2f7; color: #2d3748; text-decoration: none; font-weight: 500; border: none;" %>
+        <%= link_to "Edit", edit_book_path(@book), class: "btn btn-primary", style: "padding: 8px 20px; border-radius: 6px; background: #3182ce; color: #fff; text-decoration: none; font-weight: 500; border: none;" %>
+        <%= button_to "Delete", @book, method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "btn btn-danger", style: "padding: 8px 20px; border-radius: 6px; background: #e53e3e; color: #fff; font-weight: 500; border: none;" %>
+    </div>
+</div>
